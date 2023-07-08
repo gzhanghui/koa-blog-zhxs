@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>朝花夕拾</title>
+  <meta name="baidu-site-verification" content="codeva-D7ymar5UTF" />
+  <meta name="Keywords" content="慕课网，imooc，JAVA，前端，Python，大数据"/>
+  <meta name="Description" content="慕课网（IMOOC）是IT技能学习平台。慕课网(IMOOC)课程涉及JAVA、前端、Python、大数据等60类主流技术语言，覆盖了面试就业、职业成长、自我提升等需求场景，帮助用户实现从技能提升到岗位提升的能力闭环。"/>
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://icons.getbootstrap.com/assets/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <div class="fixed-border fixed-top d-none d-sm-block"></div>
+  <div class="fixed-border fixed-bottom  d-none d-sm-block"></div>
+  <div class="fixed-border position-fixed h-100 start-0  d-none d-sm-block" style="width: var(--padding);"></div>
+  <div class="fixed-border position-fixed h-100 end-0   d-none d-sm-block" style="width: var(--padding);"></div>
+  <%- include('components/header') %>
+  <div class="container position-relative z-1">
+    <%- body %>
+  </div>
+  <div class="container-fluid p-0 position-relative bottom-0 z-1">
+    <% if(!isHome()) {%>
+    <div class="border-top"></div>
+    <div class="container">
+      <div class="row w-100 <%- isPost()?'justify-content-md-center ':'' %>"> 
+        <div class="<%- isPost()?'col-md-9  col-sm-12':'offset-md-1 col-md-11' %>">
+          <%- include('components/footer') %>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <script>
+    $(function() {
+      $('.btn-trigger').on("click", function() {
+        $(this).toggleClass('close')
+        $(this).next().toggleClass('collapse')
+      })
+
+      var mobile = new Swiper(".mobile-swiper", {
+        spaceBetween: 15,
+        pagination: {
+          el: ".swiper-pagination",
+        }
+      });
+    })
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4113670d7d9b0186361d85a2b91e635c";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+</body>
+
+</html>

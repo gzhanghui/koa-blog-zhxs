@@ -1,0 +1,14 @@
+<div class="row justify-content-md-center ">
+  <div class="col-md-10 col-sm-12">
+    <ul class="row list-unstyled my-5">
+      <% data.forEach(function(p) { %>
+      <li class="d-inline-block col-md-3 col-sm-6">
+        <a href="<%= p.href %>">
+          <img class="w-100" src="<%= p.image %>" >
+          <p class="p-title"><%- p.title%></p>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

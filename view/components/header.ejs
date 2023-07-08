@@ -1,0 +1,49 @@
+<header class="header container fixed-top  <%- isPost()?'justify-content-between':'' %>">
+  <div class="row w-100">
+    <div class="header-transition d-none d-md-block <%- isHome()?'col-md-11 ms-md-5':'col-md-10 offset-md-1' %>">
+      <nav class="d-md-flex w-100 <%- isPost()?'justify-content-center':'justify-content-between' %>">
+        <div class="logo-wrap">
+          <span class="logo-icon <%- isHome()?'':'d-none' %>"> <i class="icon"></i></span>
+          <div class="logo-image <%- !isHome()?'':'d-none' %>">
+            <a href="/">
+              <img src="/images/logo.svg" alt="" srcset="" width="52">
+            </a>
+          </div>
+        </div>
+        <div class="menu-wrap <%- isPost()?'d-none':'' %>">
+          <ul class="menu list-unstyled">
+            <% for (let i in config.nav) { %>
+            <li class="menu-item  list-inline-item float-start <%- config.nav[i].link=== path? 'active' :''%> "><a href="<%- config.nav[i].link %>">
+                <%= config.nav[i].label %>
+              </a><i class="menu-icon"></i></li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="header-transition d-sm-none">
+      <nav class="mobile w-100  d-flex  align-items-center justify-content-between <%- isPost()?'flex-row-reverse':'' %>">
+        <div class="logo-wrap">
+          <a href="/"> <img src="/images/logo.svg" alt="" srcset="" width="78"></a>
+        </div>
+        <div class="d-none d-md-inline-block">
+          <svg t="1688579003829" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1135" width="20" height="20"><path d="M299.373 746.759l45.254-45.255-157.504-157.504L960 544l0-64-772.879 0 157.506-157.506-45.254-45.255-234.761 234.76z" p-id="1136"></path></svg>
+        </div>
+        <div class="menu-wrap <%- isPost()?'d-none':'' %>">
+          <button class="btn-trigger"><i class="line line-1"></i><i class="line line-2"></i></button>
+          <ul class="menu">
+            <% for (var i in config.nav) { %>
+            <li class="menu-item <%-  config.nav[i].link=== path? 'active' :''%> ">
+              <a href="<%- config.nav[i].link %>">
+                <img src="<%- '/images/'+config.nav[i].icon+'.svg' %>" alt="" srcset="" width="52">
+                <span><%= config.nav[i].label %></span>
+              </a><i class="menu-icon"></i>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+</header>

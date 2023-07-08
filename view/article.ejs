@@ -1,0 +1,24 @@
+  <div class="row" style="min-height: calc(100vh - 240px);">
+    <div class="col-md-7 offset-md-1 col-sm-12">
+      <ul class="post-list">
+        <% data.forEach(function(post) { %>
+        <li class="post-item">
+          <div class="split-line"></div>
+          <h2 class="post-title"><%- post.title%></h2>
+          <div class="post-content"><%- post.description%></div>
+          <a class="post-more-btn btn" href="./<%- post.id %>">阅读原文</a>
+        </li>
+        <% }) %>
+      </ul>
+    <%- include('components/pagination') %>
+    </div>
+  </div>
+  <script>
+    $(function() {
+
+    })
+  </script>
+
+
+
+

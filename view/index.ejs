@@ -1,0 +1,49 @@
+<div class="content px-2 px-md-5">
+    <div class="row">
+        <div class="col-md-7 col-sm-12">
+            <div
+                class="d-md-flex flex-md-column align-items-md-start justify-content-md-end max-vh-100  h-100 pc-left-wrap">
+                <div class="logo mt-5 d-none  d-md-block">
+                    <span class="logo-name">夕朝拾花</span>
+                    <i class="logo-dot-icon"></i>
+                </div>
+                <div class="sentence-wrap  col-md-10 col-sm-12 mt-5 mb-3" id="sentence">
+                    <%- hitokoto %>
+                </div>
+                <div class=" mobile-swiper w-100 d-md-none">
+                    <div class="swiper-wrapper">
+                        <% config.swiper.forEach((img)=> { %>
+                            <div class="swiper-slide">
+                                <img src="<%= img %>" alt="" srcset="">
+                            </div>
+                            <% })%>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <footer id="footer" class="footer-wrap px-0 col-md-10 col-sm-12 border-top">
+                    <div class="d-flex flex-column flex-column-reverse justify-content-between  flex-md-row mt-3">
+                      <div class="footer-copyright py-2">
+                        <span>
+                          <i class="bi bi-c-circle"></i>
+                          <%= new Date().getFullYear() %>
+                          朝花夕拾
+                        </span>
+                        <a target="_blank" href="https://beian.miit.gov.cn/" class="link">陕ICP备2023006859号-1</a>
+                      </div>
+                      <div class="footer-social  py-2">
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-github"></i></a>
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                      </div>
+                    </div>
+                  </footer>
+            </div>
+        </div>
+        <div class="col-md-5 d-none d-md-block">
+            <div class="image-wrap">
+                <div class="bg-image col-md-10">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
