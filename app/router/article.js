@@ -1,7 +1,7 @@
 const Router = require('koa-router')
-const router = new Router({})
 const axios =  require('axios')
 
+const router = new Router({})
 
 
 router.get('/article', async ctx => {
