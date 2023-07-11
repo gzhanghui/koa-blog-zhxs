@@ -45,7 +45,7 @@ onerror(app, {
 
 initLoadRouters(app)
 
-app.listen(3000, '127.0.0.1', () => {
+app.listen(3000, () => {
     console.log(chalk.green('server running at'), chalk.green(`http://localhost:3000`))
 });
 
